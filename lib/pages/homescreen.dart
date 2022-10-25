@@ -215,11 +215,37 @@ class _HomePageState extends State<HomePage> {
                         height: 20,
                       ),
                       Container(
+                        padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16)),
-                        child: const ListTile(
-                          leading: Icon(Icons.favorite),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.favorite),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  "Speaking Skills",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "15 Exercises",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ],
