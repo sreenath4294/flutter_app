@@ -1,4 +1,4 @@
-import 'package:demo_app/homescreen.dart';
+import 'package:demo_app/pages/homescreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: "Welcome to my application",
-      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
     );
   }
 }
