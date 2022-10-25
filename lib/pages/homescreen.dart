@@ -1,4 +1,5 @@
 import 'package:demo_app/utils/emoticons.dart';
+import 'package:demo_app/utils/exercise_title.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,8 +16,8 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.blue[800],
       bottomNavigationBar: BottomNavigationBar(items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+        BottomNavigationBarItem(icon: Icon(Icons.message), label: ''),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
       ]),
       body: SafeArea(
         child: Column(
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
             //greetings row
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 25.0, vertical: 12.00),
+                  const EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.00),
               child: Column(
                 children: [
                   Row(
@@ -189,7 +190,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(
-              height: 13,
+              height: 10,
             ),
             Expanded(
               child: Container(
@@ -214,40 +215,32 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         height: 20,
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(16)),
-                        child: Row(
-                          children: [
-                            const Icon(Icons.favorite),
-                            const SizedBox(
-                              width: 12,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
-                                  "Speaking Skills",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  "15 Exercises",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.grey),
-                                ),
-                              ],
-                            ),
+                      Expanded(
+                        child: ListView(
+                          children: const [
+                            ExerciseTitle(
+                                icon: Icons.favorite,
+                                exerciseName: "Speaking Skills",
+                                exerciseNumber: 15,
+                                color: Colors.orange),
+                            ExerciseTitle(
+                                icon: Icons.person,
+                                exerciseName: "Writing Skills",
+                                exerciseNumber: 2,
+                                color: Colors.blue),
+                            ExerciseTitle(
+                                icon: Icons.star,
+                                exerciseName: "Reading Skills",
+                                exerciseNumber: 8,
+                                color: Colors.pink),
+                            ExerciseTitle(
+                                icon: Icons.person,
+                                exerciseName: "Listening Skills",
+                                exerciseNumber: 15,
+                                color: Colors.green),
                           ],
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
